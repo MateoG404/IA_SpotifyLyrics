@@ -4,6 +4,9 @@
 from dependences import instalar_dependencias
 from api_spotify import __init__
 from songs import __init_songs__
+from Kmeans_clasificador import __init_clasificador__
+from RandomForest import __init_random_forest
+
 import os
 import pkg_resources
 
@@ -21,10 +24,17 @@ carpeta_padre = get_PATH_URL()
 
 # Obtener datos de Spotify de los albums
 if not os.path.exists(os.path.join(carpeta_padre, 'Data', 'dataframe_albums.pkl') ):
-    # Crear archivo dataFrame_albums con  la información de los albums
     __init__()
 
 # Obtener datos de las canciones
 if not os.path.exists(os.path.join(carpeta_padre, 'Data', 'dataframe_songs.pkl') ):
-    # Crear archivo dataFrame_albums con  la información de los albums
     __init_songs__()
+
+# Hacer clasificación manual de las canciones
+if not os.path.exists(os.path.join(carpeta_padre, 'Data', 'dataframe_songs_sentimientos.pkl') ):
+    __init_clasificador__()
+
+# Entrenar modelo Random Forest
+if not os.path.exists(os.path.join(carpeta_padre, 'Data', 'random_forest_model.joblib') ):
+    __init_random_forest()
+

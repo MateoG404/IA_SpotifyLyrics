@@ -45,11 +45,9 @@ def random_forest(df):
 def predict_feeling_song(data):
     # Cargar modelo
 
-    saved_model = pickle.load( open(os.path.join(get_PATH_URL(), 'Data', 'random_forest_model2.joblib'), "rb"))
+    saved_model = pickle.load( open(os.path.join(get_PATH_URL(), 'Data', 'random_forest_model.joblib'), "rb"))
 
     print(saved_model.predict(data))
-
-    
 
 def __init_random_forest():
         
@@ -62,7 +60,7 @@ def __init_random_forest():
     random_forest_spotify = random_forest(df)
 
     # Guardar modelo
-    pickle.dump(random_forest_spotify, open(os.path.join(get_PATH_URL(), 'Data', 'random_forest_model2.joblib'), "wb"))
+    pickle.dump(random_forest_spotify, open(os.path.join(get_PATH_URL(), 'Data', 'random_forest_model.joblib'), "wb"))
 
     ''' 
         GUARDADO DE MODELO
@@ -70,7 +68,7 @@ def __init_random_forest():
 
     joblib.dump(random_forest, os.path.join(get_PATH_URL(), 'Data', 'random_forest_model.joblib'))
 
-#__init_random_forest()
+
 
 
 
