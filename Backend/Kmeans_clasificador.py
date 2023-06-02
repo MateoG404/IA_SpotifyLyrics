@@ -12,8 +12,8 @@ import matplotlib.pyplot as plt
 from sklearn.pipeline import Pipeline
 
 
-def get_dfSongs():
-    PATH_URL = os.path.join(get_PATH_URL(), 'Data', 'dataframe_songs.pkl')
+def get_dfSongs(df):
+    PATH_URL = os.path.join(get_PATH_URL(), 'Data', df)
     df_songs = pd.read_pickle(PATH_URL)
     return df_songs
 
@@ -49,9 +49,8 @@ def kmeans_clasification(df):
 
 def __init_clasificador__():
     
-    df_songs = get_dfSongs()
+    df_songs = get_dfSongs('dataframe_songs.pkl')
 
     df_feelings_songs = kmeans_clasification(df_songs)
     df_feelings_songs.to_pickle(os.path.join(get_PATH_URL(), 'Data', 'dataframe_songs_sentimientos.pkl'))
 
-__init_clasificador__()
