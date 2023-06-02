@@ -38,8 +38,7 @@ def get_info_albums(PATH_URL,sp):
     file_url = open(PATH_URL,'r')
     lines_url = file_url.readlines()
     array_album_info = []
-
-
+    
     for line in lines_url :        
         linea_nueva = line.replace("https://open.spotify.com/album/","")
         linea_nueva = linea_nueva[:linea_nueva.find("?si")]
@@ -47,7 +46,6 @@ def get_info_albums(PATH_URL,sp):
         # Get the album information from Spotify
         album = sp.album(linea_nueva)
         array_album_info.append([album['id'],album['total_tracks'],album['name'],album['artists'][0]['name'],album['tracks']])
-
 
     return pd.DataFrame(columns = ['id','total_tracks','name_album','name_artist','tracks'],data = array_album_info)
 
@@ -70,5 +68,3 @@ def __init__():
 
     # Guardar df en un archivo binario
     df_albums.to_pickle(os.path.join(carpeta_padre, 'Data', 'dataframe_albums.pkl'))
-
-

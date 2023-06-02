@@ -16,9 +16,12 @@ def get_PATH_URL():
 
 instalar_dependencias()
 
-# Obtener datos de Spotify
+# Obtener datos de Spotify de los albums
+
 if not os.path.exists(get_PATH_URL()):
+    print("WE")
     # Crear archivo dataFrame_albums con  la información de los albums
     __init__()
 
+# Obtener datos de 
 #if not os.patnot os.path.exists(get_PATH_URL())
