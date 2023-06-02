@@ -26,6 +26,7 @@ def configuration_API_Spotify(ruta_config):
     # Obtener Tokens
     clientID = config.get('Spotify', 'ClientID')
     clientSecret = config.get('Spotify', 'Client_secret')
+    print(clientID)
 
     # Make Auth with the Spotify API
     client_credential_manager = SpotifyClientCredentials(client_id=clientID, client_secret=clientSecret)
@@ -38,7 +39,7 @@ def get_info_albums(PATH_URL,sp):
     file_url = open(PATH_URL,'r')
     lines_url = file_url.readlines()
     array_album_info = []
-    
+
     for line in lines_url :        
         linea_nueva = line.replace("https://open.spotify.com/album/","")
         linea_nueva = linea_nueva[:linea_nueva.find("?si")]

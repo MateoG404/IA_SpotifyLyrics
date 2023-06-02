@@ -5,6 +5,10 @@ import pandas as pd
 import numpy as np
 import os 
 import time
+import spotipy
+import configparser
+from spotipy.oauth2 import SpotifyClientCredentials
+
 
 
 def get_PATH_URL():
@@ -27,6 +31,15 @@ def __init__():
         raise FileNotFoundError(f"El archivo config.ini no se encuentra en la ruta: {ruta_config}")
     
     print(ruta_config)
+    clientID = 'c44fa7630d8f42cda23b8ab3f5479fa5' #'c4a67065bd544df2b4127e3cbc17b6f6' #config['spotify']['client_id']
+
+    clientSecret ='3a47c89550f5465f8f4bdcec4ae1a8c1' # 'b81c2f7d01d24488b431bbb05976e77a' #config['spotify']['client_secret']
+
+    # Make Auth with the Spotify API
+
+    client_credential_manager = SpotifyClientCredentials(client_id=clientID, client_secret=clientSecret)
+    sp = spotipy.Spotify(client_credentials_manager = client_credential_manager)
+
     # Conectar la API de Spotify para extraer audiofeatures
     sp = configuration_API_Spotify(ruta_config)
 
@@ -57,7 +70,7 @@ def __init__():
                 pass
 
         cont_album += 1
-        
+
     df_songs = pd.DataFrame(columns = ['id','duration_ms','danceability','energy','loudness','valence'],data = audio_features_df,index = songs_id)
     print(df_songs)
     
