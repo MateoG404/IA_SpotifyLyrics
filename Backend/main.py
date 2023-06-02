@@ -6,8 +6,8 @@ from api_spotify import __init__
 from songs import __init_songs__
 from Kmeans_clasificador import __init_clasificador__
 from RandomForest import __init_random_forest
-
 import os
+import pandas as pd
 import pkg_resources
 
 # Obtener ruta de archivo 
@@ -29,6 +29,8 @@ if not os.path.exists(os.path.join(carpeta_padre, 'Data', 'dataframe_albums.pkl'
 # Obtener datos de las canciones
 if not os.path.exists(os.path.join(carpeta_padre, 'Data', 'dataframe_songs.pkl') ):
     __init_songs__()
+else:
+    df = pd.read_pickle(os.path.join(carpeta_padre, 'Data', 'dataframe_songs.pkl'))
 
 # Hacer clasificación manual de las canciones
 if not os.path.exists(os.path.join(carpeta_padre, 'Data', 'dataframe_songs_sentimientos.pkl') ):
@@ -38,3 +40,5 @@ if not os.path.exists(os.path.join(carpeta_padre, 'Data', 'dataframe_songs_senti
 if not os.path.exists(os.path.join(carpeta_padre, 'Data', 'random_forest_model.joblib') ):
     __init_random_forest()
 
+
+print(df)

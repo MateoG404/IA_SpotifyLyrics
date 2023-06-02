@@ -62,3 +62,4 @@ def __init_songs__():
 
     df_songs = pd.DataFrame(columns = ['id','duration_ms','danceability','energy','loudness','valence'],data = audio_features_df,index = songs_id)
     print(df_songs) 
+    df_songs.to_pickle(os.path.join(get_PATH_URL(), 'Data', 'dataframe_songs.pkl'))

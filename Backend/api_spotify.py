@@ -29,7 +29,8 @@ def configuration_API_Spotify(ruta_config):
     print(clientID)
 
     # Make Auth with the Spotify API
-    client_credential_manager = SpotifyClientCredentials(client_id=clientID, client_secret=clientSecret)
+    client_credential_manager = SpotifyClientCredentials(client_id=clientID, 
+                                                         client_secret=clientSecret)
     sp = spotipy.Spotify(client_credentials_manager = client_credential_manager)
     return sp
 
