@@ -37,7 +37,7 @@ def __init_songs__():
     # Crear DataFrame para las canciones
 
     songs_id = [] 
-                        # id,duration_ms, danceability, energy, loudness, valence,
+                        # id,duration_ms, danceability, energy, loudness, valence
     audio_features_df = []
     cont = 1
     cont_album = 0
@@ -61,5 +61,18 @@ def __init_songs__():
         cont_album += 1
 
     df_songs = pd.DataFrame(columns = ['id','duration_ms','danceability','energy','loudness','valence'],data = audio_features_df,index = songs_id)
+    
     print(df_songs) 
+    
     df_songs.to_pickle(os.path.join(get_PATH_URL(), 'Data', 'dataframe_songs.pkl'))
+
+# Open df songs
+PATH_URL = os.path.join(get_PATH_URL(), 'Data', 'dataframe_albums.pkl')
+df_album =  pd.read_pickle(PATH_URL)
+
+print(df_album['tracks'].iloc[0])
+
+
+# Nombre de artista y canción
+    # Nombre del artista y canción -> Donde la letra no este en Spotify
+
