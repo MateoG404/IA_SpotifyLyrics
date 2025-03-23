@@ -1,31 +1,28 @@
-# IA_SpotifyLyrics
+This repository contains an AI project to fetch the lyrics of songs played on Spotify using the Spotify API and natural language processing techniques.
 
-Este repositorio contiene un proyecto de IA para obtener las letras de las canciones reproducidas en Spotify utilizando la API de Spotify y técnicas de procesamiento de lenguaje natural.
 
-Requisitos previos
-    
-    No tiene pues el programa ejecuta las instalaciones necesarias de manera automatica
+1. Setup
 
-Configuración
+* Clone this repository to your local machine.
+* Create a developer account on Spotify and obtain the necessary authentication keys.
+* Configure the authentication keys in the config.py file of the project.
 
-    Clona este repositorio en tu máquina local.
-    Crea una cuenta de desarrollador en Spotify y obtén las claves de autenticación necesarias.
-    Configura las claves de autenticación en el archivo config.py del proyecto.
-    
-Uso
 
-    Ejecuta el archivo main.py ubicado en la carpeta Backend
-    Abre tu cliente de Spotify y reproduce una canción.
-    El programa obtendrá automáticamente las letras de la canción y las mostrará en la consola.
+2. Usage
 
-Contribuciones
+* Run the main.py file located in the Backend folder.
+* Open your Spotify client and play a song.
+* The program will automatically fetch the lyrics of the song and display them in the console.
 
-Las contribuciones son bienvenidas. Si encuentras algún problema o tienes alguna sugerencia de mejora, por favor, abre un issue en este repositorio.
-Notas
 
-Este proyecto se proporciona "tal cual" y no ofrece garantía de ningún tipo. El uso del código es responsabilidad del usuario.
-Licencia
+3. Contributions
 
-Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
+Contributions are welcome. If you encounter any issues or have suggestions for improvement, please open an issue in this repository.
 
-Espero que esta estructura básica te ayude a crear tu archivo ReadMe para el repositorio. Recuerda personalizarlo con la información específica de tu proyecto y proporcionar todos los detalles necesarios para que otros usuarios puedan entender y utilizar tu código.
+Notes
+
+This project is provided "as-is" and offers no warranty of any kind. The use of the code is at the user's own risk.
+
+License
+
+This project is distributed under the MIT license. Please refer to the LICENSE file for more details.
